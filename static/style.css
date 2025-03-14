@@ -11,7 +11,9 @@ body {
     position: relative;
     overflow: hidden;
 }
-
+footer {
+    text-align: left !important;
+}
 .brand {
     position: fixed;
     bottom: 10px;
@@ -21,6 +23,7 @@ body {
     color: rgba(255, 255, 255, 0.5); 
     margin: 0;
     padding: 0;
+    
 }
 
 #contador {
