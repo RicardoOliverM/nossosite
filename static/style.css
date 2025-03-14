@@ -3,6 +3,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column; 
     height: 100vh;
     background-color: #8b004b;
     color: white;
@@ -10,26 +11,20 @@ body {
     margin: 0;
     position: relative;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 footer {
-    text-align: left !important;
-}
-
-.brand {
     position: fixed;
     bottom: 10px;
     left: 10px;
-    font-size: 10px; 
+    text-align: left;
+}
+
+.brand {
+    font-size: 10px;
     font-family: 'Arial', sans-serif;
-    color: rgba(255, 255, 255, 0.5); 
+    color: rgba(255, 255, 255, 0.5);
     margin: 0;
     padding: 0;
-    text-align: left; 
-    width: auto; 
 }
 
 #contador {
