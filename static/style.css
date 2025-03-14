@@ -15,10 +15,12 @@ body {
 .brand {
     position: fixed;
     bottom: 10px;
-    left: 15px;
-    font-size: 12px;
-    font-family: 'Poppins', sans-serif;
-    color: rgba(255, 255, 255, 0.6);
+    left: 10px;
+    font-size: 10px; 
+    font-family: 'Arial', sans-serif; 
+    color: rgba(255, 255, 255, 0.5); 
+    margin: 0;
+    padding: 0;
 }
 
 #contador {
