@@ -10,6 +10,10 @@ body {
     margin: 0;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 footer {
     text-align: left !important;
