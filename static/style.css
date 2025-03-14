@@ -18,16 +18,18 @@ body {
 footer {
     text-align: left !important;
 }
+
 .brand {
     position: fixed;
     bottom: 10px;
     left: 10px;
     font-size: 10px; 
-    font-family: 'Arial', sans-serif; 
+    font-family: 'Arial', sans-serif;
     color: rgba(255, 255, 255, 0.5); 
     margin: 0;
     padding: 0;
-    
+    text-align: left; 
+    width: auto; 
 }
 
 #contador {
