@@ -26,13 +26,14 @@ function verificarData(){
     }
 }
 
-function estourarConfete(){
-    confetti({
-        particleCount: 150,
-        spread: 120,
-        origin: { y: 0.7 }
-    });
-}, 500);
+function estourarConfete() {
+    setTimeout(()=>{
+        confetti({
+            particleCount: 150,
+            spread: 120,
+            origin: {y:0.7}
+        });
+    }, 500);
 }
 window.onload = verificarData;
 
