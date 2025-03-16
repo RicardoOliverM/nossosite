@@ -16,6 +16,26 @@ function atualizarTempo(){
 
     document.getElementById("contador").innerText = formatado;
 }
+
+function verificarData(){
+    let hoje = new Date();
+    let dia = hoje.getDate();
+
+    if (dia === 9){
+        estourarConfete();
+    }
+}
+
+function estourarConfete(){
+    confetti({
+        particleCount: 150,
+        spread: 120,
+        origin: { y: 0.7 }
+    });
+}, 500);
+}
+window.onload = verificarData;
+
 setInterval(atualizarTempo, 1000);
 
 atualizarTempo();
