@@ -24,9 +24,10 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1"></script>
+
     <script>
         function atualizarTempo() {
-            const inicioNamoro = new Date(2021, 9, 9, 9, 9, 9); 
+            const inicioNamoro = new Date(2021, 9, 9, 9, 9, 9);
             const agora = new Date();
             
             let diff = agora - inicioNamoro;
@@ -62,9 +63,10 @@
         }
 
         setInterval(atualizarTempo, 1000);
-        verificarData(); // Verifica se hoje é dia 9 e dispara os confetes
 
-        atualizarTempo(); // Inicializa o contador
+        verificarData();
+
+        atualizarTempo();
     </script>
 </body>
 
