@@ -5,57 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosso Namoro ❤️</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="static/style.css">
 </head>
 
 <body>
     <div class="container">
         <h1>Estamos juntos há</h1>
-        <p id="contador">{{ dias }} dias</p>
-        <img src="{{ url_for('static', filename='fotonossa.jpg') }}" alt="Foto do casal">
+        <p id="contador">Carregando...</p>
+        <img src="static/fotonossa.jpg" alt="Foto do casal">
     </div>
+
     <div class="hearts">
         <div class="heart">❤️</div>
         <div class="heart">❤️</div>
         <div class="heart">❤️</div>
         <div class="heart">❤️</div>
         <div class="heart">❤️</div>
-        <div class="heart">❤️</div>
-        <div class="heart">❤️</div>
-        <div class="heart">❤️</div>
     </div>
 
-    <!-- Injetando o valor de dias do Flask diretamente no JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1"></script>
     <script>
-        // Pegando o valor de dias calculado no Flask
-        const diasNoSite = {{ dias }};
-        document.getElementById("contador").innerText = diasNoSite + " dias";
+        function atualizarTempo() {
+            const inicioNamoro = new Date(2021, 9, 9, 9, 9, 9); 
+            const agora = new Date();
+            
+            let diff = agora - inicioNamoro;
 
-        // Função para estourar confetes
+            const segundos = Math.floor((diff / 1000) % 60);
+            const minutos = Math.floor((diff / 1000 / 60) % 60);
+            const horas = Math.floor((diff / 1000 / 60 / 60) % 24);
+            const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const anos = Math.floor(dias / 365);
+            const meses = Math.floor((dias % 365) / 30);
+            const diasRestantes = (dias % 365) % 30;
+
+            const formatado = `${anos} anos, ${meses} meses, ${diasRestantes} dias, ${horas}h, ${minutos}m, ${segundos}s`;
+
+            document.getElementById("contador").innerText = formatado;
+        }
+
         function verificarData() {
             let hoje = new Date();
             let dia = hoje.getDate();
+
             if (dia === 9) {
                 estourarConfete();
             }
         }
 
         function estourarConfete() {
-            setTimeout(() => {
-                confetti({
-                    particleCount: 150,
-                    spread: 120,
-                    origin: { y: 0.7 }
-                });
-            }, 500);
+            confetti({
+                particleCount: 150,
+                spread: 120,
+                origin: { y: 0.7 }
+            });
         }
 
-        window.onload = verificarData;
-    </script>
+        setInterval(atualizarTempo, 1000);
+        verificarData(); // Verifica se hoje é dia 9 e dispara os confetes
 
-    <!-- Incluindo o script de confete -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1"></script>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+        atualizarTempo(); // Inicializa o contador
+    </script>
 </body>
 
 </html>
