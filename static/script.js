@@ -21,7 +21,7 @@ function verificarData(){
     let hoje = new Date();
     let dia = hoje.getDate();
 
-    if (dia === 9){
+    if (true){
         estourarConfete();
     }
 }
